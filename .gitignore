@@ -1,0 +1,8 @@
+# Ignore the Library folder inside VRQuiz
+VRQuiz/Library/
+
+# Ignore the Logs folder inside VRQuiz
+VRQuiz/Logs/
+
+# Ignore the Temp folder inside VRQuiz
+VRQuiz/Temp/
