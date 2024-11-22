@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 6f03ac7b1f1fcbc48a393fa6b533089c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5d2ae5bc37b7e6241bb7f065931c10a3, type: 2}
+      objectReference: {fileID: 2100000, guid: 3b8b9d7e3da7e7a469f2e3d76b3389df, type: 2}
     - target: {fileID: 919132149155446097, guid: 6f03ac7b1f1fcbc48a393fa6b533089c, type: 3}
       propertyPath: m_Name
       value: Bench
