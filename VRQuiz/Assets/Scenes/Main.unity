@@ -542,6 +542,107 @@ Transform:
   - {fileID: 1547172069}
   m_Father: {fileID: 1684742408}
   m_LocalEulerAnglesHint: {x: -135, y: 0, z: 0}
+--- !u!1 &27020906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 27020907}
+  - component: {fileID: 27020910}
+  - component: {fileID: 27020909}
+  - component: {fileID: 27020908}
+  m_Layer: 5
+  m_Name: PlayQuizCanvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &27020907
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27020906}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 679466493}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 829, y: 376.5}
+  m_SizeDelta: {x: 1658, y: 753}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &27020908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27020906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &27020909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27020906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
+--- !u!223 &27020910
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27020906}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &33671797
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,6 +708,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2559810838395413726, guid: e37d55d9adae8724c9dcf1dff5b67578, type: 3}
   m_PrefabInstance: {fileID: 1555232760}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &36417285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 36417286}
+  m_Layer: 0
+  m_Name: TeleportLoc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &36417286
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36417285}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.812, y: 4.09, z: -9.09}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1476079185}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &38105706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,6 +1777,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &146761211 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1680501587, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 530112960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &146830009 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4418847853237041829, guid: 6d6fc932d5d87fe4e9b5b4c7de50c54f, type: 3}
@@ -4070,7 +4207,7 @@ MonoBehaviour:
   m_RepeatRate: 0.1
   m_TrackedDeviceDragThresholdMultiplier: 2
   m_TrackedScrollDeltaMultiplier: 5
-  m_ActiveInputMode: 0
+  m_ActiveInputMode: 1
   m_EnableXRInput: 1
   m_EnableMouseInput: 1
   m_EnableTouchInput: 1
@@ -4884,6 +5021,7 @@ GameObject:
   - component: {fileID: 503877520}
   - component: {fileID: 503877521}
   - component: {fileID: 503877522}
+  - component: {fileID: 503877523}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4939,6 +5077,8 @@ MonoBehaviour:
   difficulty: normal
   category: 
   narrator: 0
+  player: {fileID: 146761211}
+  teleportDestination: {fileID: 36417286}
 --- !u!114 &503877522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4952,6 +5092,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _instructionsCanvas: {fileID: 269362281}
+  QuizStarted: 0
+--- !u!114 &503877523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503877518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 953101f72c17c324aa9c260f9ea503d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &505379909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6426,6 +6579,7 @@ Transform:
   - {fileID: 1846609988}
   - {fileID: 269362278}
   - {fileID: 228497984}
+  - {fileID: 27020907}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &680434723
@@ -8056,60 +8210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b46a074d0bbb314e8a7e54a567c3e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EnableCalled: 0
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
-  m_Colors:
-    m_NormalColor:
-      r: 1
-      g: 1
-      b: 1
-      a: 1
-    m_HighlightedColor:
-      r: 0.9607843
-      g: 0.9607843
-      b: 0.9607843
-      a: 1
-    m_PressedColor:
-      r: 0.78431374
-      g: 0.78431374
-      b: 0.78431374
-      a: 1
-    m_SelectedColor:
-      r: 0.9607843
-      g: 0.9607843
-      b: 0.9607843
-      a: 1
-    m_DisabledColor:
-      r: 0.78431374
-      g: 0.78431374
-      b: 0.78431374
-      a: 0.5019608
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState: {m_HighlightedSprite: {fileID: 0}, m_PressedSprite: {fileID: 0}, m_SelectedSprite: {fileID: 0}, m_DisabledSprite: {fileID: 0}}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
-  m_GroupsAllowInteraction: 1
-  m_CurrentIndex: 0
-  <isPointerInside>k__BackingField: 0
-  <isPointerDown>k__BackingField: 0
-  <hasSelection>k__BackingField: 0
-  movableAxes: 0
-  onMoveDelta: 0.01
-  interactionManager: {fileID: 0}
 --- !u!114 &850813694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8122,8 +8222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078a1979da1a56740b89540ad9e505b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonState: {fileID: 850813695}
-  movingVisuals: {fileID: 468707029}
 --- !u!114 &850813695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8136,268 +8234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32e8a7644144f8419bb881ad588ed0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders: []
-  m_InteractionLayers:
-    m_Bits: 1
-    m_Mask: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 1
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_RegisteredInteractionManager: {fileID: 0}
-  isGazePinchSelected:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isRaySelected:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isPokeSelected:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isGrabSelected:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isGazeHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isGazePinchHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isRayHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isGrabHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isPokeHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isActiveHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  disabledInteractorTypes:
-  - reference: MixedReality.Toolkit.IGrabInteractor, MixedReality.Toolkit.Core
-  raySelectCount: 0
-  gazePinchSelectCount: 0
-  grabSelectCount: 0
-  pokeSelectCount: 0
-  activeHoverCount: 0
-  <ToggleMode>k__BackingField: 0
-  <SelectThreshold>k__BackingField: 0.9
-  <DeselectThreshold>k__BackingField: 0.1
-  <TriggerOnRelease>k__BackingField: 1
-  <UseGazeDwell>k__BackingField: 0
-  <GazeDwellTime>k__BackingField: 1
-  <UseFarDwell>k__BackingField: 0
-  <FarDwellTime>k__BackingField: 1
-  allowSelectByVoice: 1
-  speechRecognitionKeyword: select
-  <VoiceRequiresFocus>k__BackingField: 1
-  <SelectRequiresHover>k__BackingField: 0
-  <IsToggled>k__BackingField:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  <OnClicked>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  <OnEnabled>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  <OnDisabled>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  smoothSelectionProgress: 1
-  distanceSpaceMode: 1
-  startPushPlane: -0.37946695
-  endPushPlane: -0.17255297
-  returnSpeed: 0.25
-  enforceFrontPush: 1
-  rejectXYRollOff: 1
-  rollOffXYDepth: 3
-  rejectZRollOff: 0
-  extendSpeed: 0.5
-  <IsProximityHovered>k__BackingField:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  selectionProgress: 0
 --- !u!65 &850813696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9297,60 +9133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b46a074d0bbb314e8a7e54a567c3e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EnableCalled: 0
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
-  m_Colors:
-    m_NormalColor:
-      r: 1
-      g: 1
-      b: 1
-      a: 1
-    m_HighlightedColor:
-      r: 0.9607843
-      g: 0.9607843
-      b: 0.9607843
-      a: 1
-    m_PressedColor:
-      r: 0.78431374
-      g: 0.78431374
-      b: 0.78431374
-      a: 1
-    m_SelectedColor:
-      r: 0.9607843
-      g: 0.9607843
-      b: 0.9607843
-      a: 1
-    m_DisabledColor:
-      r: 0.78431374
-      g: 0.78431374
-      b: 0.78431374
-      a: 0.5019608
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState: {m_HighlightedSprite: {fileID: 0}, m_PressedSprite: {fileID: 0}, m_SelectedSprite: {fileID: 0}, m_DisabledSprite: {fileID: 0}}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
-  m_GroupsAllowInteraction: 1
-  m_CurrentIndex: 1
-  <isPointerInside>k__BackingField: 0
-  <isPointerDown>k__BackingField: 0
-  <hasSelection>k__BackingField: 0
-  movableAxes: 0
-  onMoveDelta: 0.01
-  interactionManager: {fileID: 0}
 --- !u!114 &937952858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9363,8 +9145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078a1979da1a56740b89540ad9e505b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonState: {fileID: 937952859}
-  movingVisuals: {fileID: 530524838}
 --- !u!114 &937952859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9377,268 +9157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32e8a7644144f8419bb881ad588ed0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders: []
-  m_InteractionLayers:
-    m_Bits: 1
-    m_Mask: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 1
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_RegisteredInteractionManager: {fileID: 0}
-  isGazePinchSelected:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isRaySelected:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isPokeSelected:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isGrabSelected:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isGazeHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isGazePinchHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isRayHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isGrabHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isPokeHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isActiveHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  disabledInteractorTypes:
-  - reference: MixedReality.Toolkit.IGrabInteractor, MixedReality.Toolkit.Core
-  raySelectCount: 0
-  gazePinchSelectCount: 0
-  grabSelectCount: 0
-  pokeSelectCount: 0
-  activeHoverCount: 0
-  <ToggleMode>k__BackingField: 0
-  <SelectThreshold>k__BackingField: 0.9
-  <DeselectThreshold>k__BackingField: 0.1
-  <TriggerOnRelease>k__BackingField: 1
-  <UseGazeDwell>k__BackingField: 0
-  <GazeDwellTime>k__BackingField: 1
-  <UseFarDwell>k__BackingField: 0
-  <FarDwellTime>k__BackingField: 1
-  allowSelectByVoice: 1
-  speechRecognitionKeyword: select
-  <VoiceRequiresFocus>k__BackingField: 1
-  <SelectRequiresHover>k__BackingField: 0
-  <IsToggled>k__BackingField:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  <OnClicked>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  <OnEnabled>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  <OnDisabled>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  smoothSelectionProgress: 1
-  distanceSpaceMode: 1
-  startPushPlane: -0.37946695
-  endPushPlane: -0.17255297
-  returnSpeed: 0.25
-  enforceFrontPush: 1
-  rejectXYRollOff: 1
-  rollOffXYDepth: 3
-  rejectZRollOff: 0
-  extendSpeed: 0.5
-  <IsProximityHovered>k__BackingField:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  selectionProgress: 0
 --- !u!65 &937952860
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13510,30 +13028,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf98dd1206224111a38765365e98e207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lateInitialize: 0
-  lockCursorWhenFocusLocked: 1
-  setCursorInvisibleWhenFocusLocked: 0
-  maxGazeCollisionDistance: 10
-  raycastLayerMasks:
-  - m_Bits: 4294967291
-  stabilizer:
-    storedStabilitySamples: 60
-    stablePosition: {x: 0, y: 0, z: 0}
-    stableRotation: {x: 0, y: 0, z: 0, w: 0}
-  gazeTransform: {fileID: 0}
-  minHeadVelocityThreshold: 0.5
-  maxHeadVelocityThreshold: 2
-  <GazeCursorPrefab>k__BackingField: {fileID: 1000012072213228, guid: 5b3e2856904e43c680f84f326861032a, type: 3}
-  <GazeTarget>k__BackingField: {fileID: 0}
-  <HitPosition>k__BackingField: {x: 0, y: 0, z: 0}
-  <HitNormal>k__BackingField: {x: 0, y: 0, z: 0}
-  <HeadVelocity>k__BackingField: {x: 0, y: 0, z: 0}
-  <HeadMovementDirection>k__BackingField: {x: 0, y: 0, z: 0}
-  lastHitDistance: 2
-  delayInitialization: 1
-  lastHeadPosition: {x: 0, y: 0, z: 0}
-  <IsEyeTrackingEnabled>k__BackingField: 0
-  <UseHeadGazeOverride>k__BackingField: 0
 --- !u!114 &1367016918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14803,6 +14297,7 @@ Transform:
   - {fileID: 227391268}
   - {fileID: 2018046875}
   - {fileID: 1096074094}
+  - {fileID: 36417286}
   m_Father: {fileID: 1700554423}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1487409363
@@ -15018,60 +14513,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b46a074d0bbb314e8a7e54a567c3e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EnableCalled: 0
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
-  m_Colors:
-    m_NormalColor:
-      r: 1
-      g: 1
-      b: 1
-      a: 1
-    m_HighlightedColor:
-      r: 0.9607843
-      g: 0.9607843
-      b: 0.9607843
-      a: 1
-    m_PressedColor:
-      r: 0.78431374
-      g: 0.78431374
-      b: 0.78431374
-      a: 1
-    m_SelectedColor:
-      r: 0.9607843
-      g: 0.9607843
-      b: 0.9607843
-      a: 1
-    m_DisabledColor:
-      r: 0.78431374
-      g: 0.78431374
-      b: 0.78431374
-      a: 0.5019608
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState: {m_HighlightedSprite: {fileID: 0}, m_PressedSprite: {fileID: 0}, m_SelectedSprite: {fileID: 0}, m_DisabledSprite: {fileID: 0}}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
-  m_GroupsAllowInteraction: 1
-  m_CurrentIndex: 2
-  <isPointerInside>k__BackingField: 0
-  <isPointerDown>k__BackingField: 0
-  <hasSelection>k__BackingField: 0
-  movableAxes: 0
-  onMoveDelta: 0.01
-  interactionManager: {fileID: 0}
 --- !u!114 &1512952867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15084,8 +14525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078a1979da1a56740b89540ad9e505b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonState: {fileID: 1512952868}
-  movingVisuals: {fileID: 2131787368}
 --- !u!114 &1512952868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15098,268 +14537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32e8a7644144f8419bb881ad588ed0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders: []
-  m_InteractionLayers:
-    m_Bits: 1
-    m_Mask: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 1
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_RegisteredInteractionManager: {fileID: 0}
-  isGazePinchSelected:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isRaySelected:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isPokeSelected:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isGrabSelected:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isGazeHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isGazePinchHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isRayHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isGrabHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isPokeHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isActiveHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  disabledInteractorTypes:
-  - reference: MixedReality.Toolkit.IGrabInteractor, MixedReality.Toolkit.Core
-  raySelectCount: 0
-  gazePinchSelectCount: 0
-  grabSelectCount: 0
-  pokeSelectCount: 0
-  activeHoverCount: 0
-  <ToggleMode>k__BackingField: 0
-  <SelectThreshold>k__BackingField: 0.9
-  <DeselectThreshold>k__BackingField: 0.1
-  <TriggerOnRelease>k__BackingField: 1
-  <UseGazeDwell>k__BackingField: 0
-  <GazeDwellTime>k__BackingField: 1
-  <UseFarDwell>k__BackingField: 0
-  <FarDwellTime>k__BackingField: 1
-  allowSelectByVoice: 1
-  speechRecognitionKeyword: select
-  <VoiceRequiresFocus>k__BackingField: 1
-  <SelectRequiresHover>k__BackingField: 0
-  <IsToggled>k__BackingField:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  <OnClicked>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  <OnEnabled>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  <OnDisabled>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  smoothSelectionProgress: 1
-  distanceSpaceMode: 1
-  startPushPlane: -0.37946695
-  endPushPlane: -0.17255297
-  returnSpeed: 0.25
-  enforceFrontPush: 1
-  rejectXYRollOff: 1
-  rollOffXYDepth: 3
-  rejectZRollOff: 0
-  extendSpeed: 0.5
-  <IsProximityHovered>k__BackingField:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  selectionProgress: 0
 --- !u!65 &1512952869
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18154,60 +17331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b46a074d0bbb314e8a7e54a567c3e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EnableCalled: 0
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
-  m_Colors:
-    m_NormalColor:
-      r: 1
-      g: 1
-      b: 1
-      a: 1
-    m_HighlightedColor:
-      r: 0.9607843
-      g: 0.9607843
-      b: 0.9607843
-      a: 1
-    m_PressedColor:
-      r: 0.78431374
-      g: 0.78431374
-      b: 0.78431374
-      a: 1
-    m_SelectedColor:
-      r: 0.9607843
-      g: 0.9607843
-      b: 0.9607843
-      a: 1
-    m_DisabledColor:
-      r: 0.78431374
-      g: 0.78431374
-      b: 0.78431374
-      a: 0.5019608
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState: {m_HighlightedSprite: {fileID: 0}, m_PressedSprite: {fileID: 0}, m_SelectedSprite: {fileID: 0}, m_DisabledSprite: {fileID: 0}}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
-  m_GroupsAllowInteraction: 1
-  m_CurrentIndex: 0
-  <isPointerInside>k__BackingField: 0
-  <isPointerDown>k__BackingField: 0
-  <hasSelection>k__BackingField: 0
-  movableAxes: 0
-  onMoveDelta: 0.01
-  interactionManager: {fileID: 0}
 --- !u!114 &1773474483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18220,8 +17343,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078a1979da1a56740b89540ad9e505b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonState: {fileID: 1773474484}
-  movingVisuals: {fileID: 92215076}
 --- !u!114 &1773474484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18234,268 +17355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32e8a7644144f8419bb881ad588ed0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders: []
-  m_InteractionLayers:
-    m_Bits: 1
-    m_Mask: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 1
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_RegisteredInteractionManager: {fileID: 0}
-  isGazePinchSelected:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isRaySelected:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isPokeSelected:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isGrabSelected:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isGazeHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isGazePinchHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isRayHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isGrabHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isPokeHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  isActiveHovered:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  disabledInteractorTypes:
-  - reference: MixedReality.Toolkit.IGrabInteractor, MixedReality.Toolkit.Core
-  raySelectCount: 0
-  gazePinchSelectCount: 0
-  grabSelectCount: 0
-  pokeSelectCount: 0
-  activeHoverCount: 0
-  <ToggleMode>k__BackingField: 0
-  <SelectThreshold>k__BackingField: 0.9
-  <DeselectThreshold>k__BackingField: 0.1
-  <TriggerOnRelease>k__BackingField: 1
-  <UseGazeDwell>k__BackingField: 0
-  <GazeDwellTime>k__BackingField: 1
-  <UseFarDwell>k__BackingField: 0
-  <FarDwellTime>k__BackingField: 1
-  allowSelectByVoice: 1
-  speechRecognitionKeyword: select
-  <VoiceRequiresFocus>k__BackingField: 1
-  <SelectRequiresHover>k__BackingField: 0
-  <IsToggled>k__BackingField:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  <OnClicked>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  <OnEnabled>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  <OnDisabled>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  smoothSelectionProgress: 1
-  distanceSpaceMode: 1
-  startPushPlane: -0.37946695
-  endPushPlane: -0.17255297
-  returnSpeed: 0.25
-  enforceFrontPush: 1
-  rejectXYRollOff: 1
-  rollOffXYDepth: 3
-  rejectZRollOff: 0
-  extendSpeed: 0.5
-  <IsProximityHovered>k__BackingField:
-    active: 0
-    startTime: 0
-    endTime: 0
-    onEntered:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    onExited:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  selectionProgress: 0
 --- !u!65 &1773474485
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20755,7 +19614,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Press A to select & press objects
 
-    Use trigger to interact with UI'
+    Press B to cancel
+
+    Use trigger
+    to interact with UI'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0ada0902b8b62b4418819de8929a93c6, type: 2}
   m_sharedMaterial: {fileID: 1980387003830301137, guid: 0ada0902b8b62b4418819de8929a93c6, type: 2}
@@ -21152,7 +20014,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_InputActionReferencePerformed: {fileID: -2439264783773714294, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
+    m_InputActionReferencePerformed: {fileID: 0}
     m_InputActionReferenceValue: {fileID: 0}
     m_ObjectReferenceObject: {fileID: 0}
     m_ManualPerformed: 0

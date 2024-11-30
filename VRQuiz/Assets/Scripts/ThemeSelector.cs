@@ -11,19 +11,23 @@ public class ThemeSelector : MonoBehaviour
     [SerializeField] private Canvas hoverCanvas; // Assign your quiz canvas
     [SerializeField] private InputActionAsset inputActions; // Assign your input actions
     private InputAction buttonAction; // Tracks the trigger action
+    private InputAction cancelAction; // Tracks the cancel action
 
     void OnEnable()
     {
         // Get the action from the input asset
         var actionMap = inputActions.FindActionMap("Controller");
         buttonAction = actionMap.FindAction("Primary Button");
+        cancelAction = actionMap.FindAction("Secondary Button");
 
         buttonAction.Enable();
+        cancelAction.Enable();
     }
 
     void OnDisable()
     {
         buttonAction.Disable();
+        cancelAction.Disable();
     }
 
     void Update()
@@ -63,6 +67,11 @@ public class ThemeSelector : MonoBehaviour
                 Debug.Log("Activate is pressed");
                 HideHoverCanvas();
                 ShowSettings(hoveredObject.name);
+            }
+            if (cancelAction.triggered)
+            {
+                Debug.Log("Cancel is pressed");
+                HideSettings();
             }
         }
         else
@@ -112,6 +121,14 @@ public class ThemeSelector : MonoBehaviour
     void HideHoverCanvas()
     {
         foreach (Transform child in hoverCanvas.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+    }
+
+    void HideSettings()
+    {
+        foreach (Transform child in settingsCanvas.transform)
         {
             child.gameObject.SetActive(false);
         }

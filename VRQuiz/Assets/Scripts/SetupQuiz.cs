@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class SetupQuiz : MonoBehaviour
 {
-    [SerializeField] private int answerTime = 10;
-    [SerializeField] private string difficulty = "normal";
+    public int answerTime = 10;
+    public string difficulty = "Normal";
     public string category = "";
-    [SerializeField] private bool narrator = false;
+    public bool narrator = false;
+    [SerializeField] private Transform player; // Reference to the player or camera
+    [SerializeField] private Transform teleportDestination; // Reference to the teleport location
 
     public void SetAnswerTime(int time)
     {
@@ -29,6 +31,9 @@ public class SetupQuiz : MonoBehaviour
 
     public void StartQuiz()
     {
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        gameManager.QuizStarted = true;
+        player.position = teleportDestination.position;
         Debug.Log($"Starting quiz with {answerTime} seconds, {difficulty} difficulty, and {(narrator ? "narrator" : "no narrator")}.");
     }
 
