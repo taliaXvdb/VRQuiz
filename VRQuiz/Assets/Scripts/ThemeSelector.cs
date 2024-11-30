@@ -8,21 +8,22 @@ public class ThemeSelector : MonoBehaviour
     private GameObject lastHoveredObject; // Tracks the last object hovered
 
     [SerializeField] private Canvas settingsCanvas; // Assign your settings canvas
+    [SerializeField] private Canvas hoverCanvas; // Assign your quiz canvas
     [SerializeField] private InputActionAsset inputActions; // Assign your input actions
-    private InputAction triggerAction; // Tracks the trigger action
+    private InputAction buttonAction; // Tracks the trigger action
 
     void OnEnable()
     {
         // Get the action from the input asset
         var actionMap = inputActions.FindActionMap("Controller");
-        triggerAction = actionMap.FindAction("Trigger");
+        buttonAction = actionMap.FindAction("Primary Button");
 
-        triggerAction.Enable();
+        buttonAction.Enable();
     }
 
     void OnDisable()
     {
-        triggerAction.Disable();
+        buttonAction.Disable();
     }
 
     void Update()
@@ -43,12 +44,24 @@ public class ThemeSelector : MonoBehaviour
                 {
                     lastHoveredObject = hoveredObject;
                     Debug.Log($"Hovering over: {hoveredObject.name}");
+                    ShowHoverCanvas(hoveredObject.name);
                 }
 
             }
-            if (triggerAction.triggered)
+            else
             {
-                Debug.Log("Trigger is pressed");
+                // Reset when the object doesn't have the correct tag
+                if (lastHoveredObject != null)
+                {
+                    Debug.Log("No longer hovering over anything.");
+                    lastHoveredObject = null;
+                    HideHoverCanvas();
+                }
+            }
+            if (buttonAction.triggered)
+            {
+                Debug.Log("Activate is pressed");
+                HideHoverCanvas();
                 ShowSettings(hoveredObject.name);
             }
         }
@@ -59,6 +72,7 @@ public class ThemeSelector : MonoBehaviour
             {
                 Debug.Log("No longer hovering over anything.");
                 lastHoveredObject = null;
+                HideHoverCanvas();
             }
         }
     }
@@ -67,6 +81,23 @@ public class ThemeSelector : MonoBehaviour
     {
         // Find the child GameObject in the settings canvas by name
         GameObject category = settingsCanvas.transform.Find(categoryName)?.gameObject;
+        SetupQuiz setupQuiz = FindObjectOfType<SetupQuiz>();
+
+        if (category != null)
+        {
+            category.SetActive(true);
+            setupQuiz.category = categoryName;
+        }
+        else
+        {
+            Debug.LogError($"Category '{categoryName}' not found in the settings canvas.");
+        }
+    }
+
+    void ShowHoverCanvas(string categoryName)
+    {
+        // Find the child GameObject in the hover canvas by name
+        GameObject category = hoverCanvas.transform.Find(categoryName)?.gameObject;
 
         if (category != null)
         {
@@ -74,7 +105,15 @@ public class ThemeSelector : MonoBehaviour
         }
         else
         {
-            Debug.LogError($"Category '{categoryName}' not found in the settings canvas.");
+            Debug.LogError($"Category '{categoryName}' not found in the hover canvas.");
+        }
+    }
+
+    void HideHoverCanvas()
+    {
+        foreach (Transform child in hoverCanvas.transform)
+        {
+            child.gameObject.SetActive(false);
         }
     }
 }
