@@ -13,6 +13,8 @@ public class ThemeSelector : MonoBehaviour
     private InputAction buttonAction; // Tracks the trigger action
     private InputAction cancelAction; // Tracks the cancel action
 
+    private bool settingUpQuiz = false;
+
     void OnEnable()
     {
         // Get the action from the input asset
@@ -40,8 +42,8 @@ public class ThemeSelector : MonoBehaviour
         {
             GameObject hoveredObject = hit.collider.gameObject;
 
-            // Check if the object has the correct tag
-            if (hoveredObject.CompareTag(targetTag))
+           
+            if (hoveredObject.CompareTag(targetTag) && !settingUpQuiz)
             {
                 // If it's a new object
                 if (hoveredObject != lastHoveredObject)
@@ -90,6 +92,7 @@ public class ThemeSelector : MonoBehaviour
     {
         // Find the child GameObject in the settings canvas by name
         GameObject category = settingsCanvas.transform.Find(categoryName)?.gameObject;
+        settingUpQuiz = true;
         SetupQuiz setupQuiz = FindObjectOfType<SetupQuiz>();
 
         if (category != null)
