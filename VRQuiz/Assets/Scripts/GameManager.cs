@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     // Hide the instructions canvas after 10 seconds
     private IEnumerator HideInstructions()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(3);
         _instructionsCanvas.gameObject.SetActive(false);
         _isInstructionsShown = false;
     }

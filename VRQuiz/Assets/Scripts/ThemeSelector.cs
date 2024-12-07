@@ -42,7 +42,7 @@ public class ThemeSelector : MonoBehaviour
         {
             GameObject hoveredObject = hit.collider.gameObject;
 
-           
+
             if (hoveredObject.CompareTag(targetTag) && !settingUpQuiz)
             {
                 // If it's a new object
@@ -110,9 +110,11 @@ public class ThemeSelector : MonoBehaviour
     {
         // Find the child GameObject in the hover canvas by name
         GameObject category = hoverCanvas.transform.Find(categoryName)?.gameObject;
+        HideHoverCanvas();
 
         if (category != null)
         {
+            Debug.Log($"Showing category: {categoryName}");
             category.SetActive(true);
         }
         else
