@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SetupQuiz : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class SetupQuiz : MonoBehaviour
     public bool narrator = false;
     [SerializeField] private Transform player; // Reference to the player or camera
     [SerializeField] private Transform teleportDestination; // Reference to the teleport location
+    [SerializeField] private TMP_Dropdown difficultyDropdown;
 
     public void SetAnswerTime(int time)
     {
@@ -17,9 +20,9 @@ public class SetupQuiz : MonoBehaviour
         Debug.Log($"Answer time set to {answerTime} seconds.");
     }
 
-    public void SetDifficulty(string diff)
+    public void SetDifficulty()
     {
-        difficulty = diff;
+        difficulty = difficultyDropdown.options[difficultyDropdown.value].text;
         Debug.Log($"Difficulty set to {difficulty}.");
     }
 
