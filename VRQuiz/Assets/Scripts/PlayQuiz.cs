@@ -212,7 +212,14 @@ public class PlayQuiz : MonoBehaviour
             };
         }
     }
+    
+    public void StartQuiz()
+    {
+        Debug.Log("Starting quiz...");
+    }
 }
+
+
 
 public class Question
 {
