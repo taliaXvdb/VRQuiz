@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Anchor
   - Category
+  - Button
   layers:
   - Default
   - TransparentFX

@@ -28,15 +28,20 @@ public class GameManager : MonoBehaviour
         if (QuizStarted)
         {
             // Start the quiz
-            Debug.Log("Quiz started!");
             SetupQuiz setupQuiz = FindObjectOfType<SetupQuiz>();
             int timeToAnswer = setupQuiz.answerTime;
             string difficulty = setupQuiz.difficulty;
             string category = setupQuiz.category;
             bool narrator = setupQuiz.narrator;
 
+            _themeSelector = FindObjectOfType<ThemeSelector>();
+            _themeSelector.enabled = false;
             PlayQuiz playQuiz = FindObjectOfType<PlayQuiz>();
-            playQuiz.PlayQuizWithSettings(timeToAnswer, difficulty, category, narrator);
+            playQuiz.enabled = true;
+            playQuiz._answerTime = timeToAnswer;
+            playQuiz._difficulty = difficulty;
+            playQuiz._category = category;
+            playQuiz._narrator = narrator;
         }
     }
 

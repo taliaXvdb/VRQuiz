@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SetupQuiz : MonoBehaviour
 {
     public int answerTime = 10;
-    public string difficulty = "Normal";
+    public string difficulty = "Easy";
     public string category = "";
     public bool narrator = false;
     [SerializeField] private Transform player; // Reference to the player or camera

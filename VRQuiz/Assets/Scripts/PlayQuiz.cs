@@ -2,34 +2,66 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayQuiz : MonoBehaviour
 {
-    private string _category;
-    private int _answerTime;
-    private string _difficulty;
-    private bool _narrator;
+    public string _category;
+    public int _answerTime;
+    public string _difficulty;
+    public bool _narrator;
+    private GameObject hoveredButton;
     private List<Question> _questions;
+    public ButtonHandler buttonHandler;
+    [SerializeField] private InputActionAsset inputActions; // Assign your input actions
+    private InputAction buttonAction; // Tracks the trigger action
+    [SerializeField] private Transform controller; // Assign your VR controller
 
-    public void PlayQuizWithSettings(int answerTime, string difficulty, string category, bool narrator)
+    void Start()
     {
-        _answerTime = answerTime;
-        _difficulty = difficulty;
-        _category = category;
-        _narrator = narrator;
+        PlayQuizWithSettings();
+        var actionMap = inputActions.FindActionMap("Controller");
+        buttonAction = actionMap.FindAction("Primary Button");
+        buttonAction.Enable();
+    }
 
+    void Update()
+    {
+        Ray ray = new Ray(controller.position, controller.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 10f))
+        {
+            GameObject hoveredButton = hit.collider.gameObject;
+            if (hoveredButton.CompareTag("Button"))
+            {
+                Debug.Log("Button tag detected!");
+                if (buttonAction.triggered)
+                {
+                    buttonHandler.OnButtonClicked(hoveredButton);
+                }
+            }
+            else
+            {
+                Debug.Log("No button detected.");
+            }
+        }
+    }
+
+    public void PlayQuizWithSettings()
+    {
         Debug.Log($"Playing quiz with settings: Answer Time: {_answerTime}, Difficulty: {_difficulty}, Category: {_category}, Narrator: {_narrator}");
-        if (difficulty == "Easy")
+        if (_difficulty == "Easy")
         {
             MakeQuestionList("Easy");
             Debug.Log("Easy mode selected.");
         }
-        else if (difficulty == "Normal")
+        else if (_difficulty == "Normal")
         {
             MakeQuestionList("Normal");
             Debug.Log("Normal mode selected.");
         }
-        else if (difficulty == "Hard")
+        else if (_difficulty == "Hard")
         {
             MakeQuestionList("Hard");
             Debug.Log("Hard mode selected.");
@@ -212,7 +244,7 @@ public class PlayQuiz : MonoBehaviour
             };
         }
     }
-    
+
     public void StartQuiz()
     {
         Debug.Log("Starting quiz...");
