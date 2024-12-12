@@ -1,10 +1,8 @@
 fileFormatVersion: 2
-guid: 6b4823b90e9a52040b4ace33e8d618aa
-labels:
-- Sky
+guid: c74cef89b122f67478b82bca941d7d3e
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 2100000
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

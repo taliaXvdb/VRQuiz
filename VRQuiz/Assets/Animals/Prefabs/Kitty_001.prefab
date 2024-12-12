@@ -55,7 +55,7 @@ PrefabInstance:
     - target: {fileID: 681933346750662141, guid: c1076de1f3cbb794fb3362efe98adc0d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e926e46960f246e4d83d1b49228619d2, type: 2}
+      objectReference: {fileID: 2100000, guid: cd460ee726f66dc4b84770a7092f5593, type: 2}
     - target: {fileID: 919132149155446097, guid: c1076de1f3cbb794fb3362efe98adc0d, type: 3}
       propertyPath: m_Name
       value: Kitty_001
