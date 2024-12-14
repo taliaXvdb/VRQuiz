@@ -11,10 +11,15 @@ public class PlayQuiz : MonoBehaviour
     public string _difficulty;
     public bool _narrator;
     private List<Question> _questions;
+    private SetupQuiz _setupQuiz;
+    public string Answer = "";
     [SerializeField] private List<GameObject> _answerButtons;
 
     void Start()
     {
+        _setupQuiz = FindObjectOfType<SetupQuiz>();
+        _setupQuiz.enabled = false;
+
         foreach (var button in _answerButtons)
         {
             button.SetActive(true);

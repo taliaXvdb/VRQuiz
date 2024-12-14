@@ -1,76 +1,73 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.InputSystem;
 
 public class ButtonHandler : MonoBehaviour
 {
-    [SerializeField] private Transform controller;
-    [SerializeField] private InputActionAsset inputAction;
 
-    private bool _isPressed;
-    private Vector3 _startPosition;
+    private bool _isPressed = false;
+    private Vector3 _initialPosition;
     private ConfigurableJoint _joint;
-    private InputAction buttonAction;
 
-    public UnityEvent OnPressed, OnReleased;
-
-    void OnEnable()
-    {
-        // Get the action from the input asset
-        var actionMap = inputAction.FindActionMap("Controller");
-        buttonAction = actionMap.FindAction("Primary Button");
-
-        buttonAction.Enable();
-    }
-
-    void OnDisable()
-    {
-        buttonAction.Disable();
-    }
+    public string chosenAnswer;
 
     void Start()
     {
         _joint = GetComponent<ConfigurableJoint>();
-        _startPosition = transform.localPosition;
+        _initialPosition = transform.localPosition;
     }
 
     void Update()
     {
-        Ray ray = new Ray(controller.position, controller.forward);
-        RaycastHit hit;
-
-        // Perform the raycast
-        if (Physics.Raycast(ray, out hit, 10f))
+        if (_isPressed)
         {
-            Debug.Log("ButtonHandler Update");
-            if (buttonAction.triggered)
-            {
-                Debug.Log("Button pressed");
-                if (!_isPressed)
-                {
-                    Pressed();
-                }
-                else
-                {
-                    Released();
-                }
-            }
+            transform.localPosition = _initialPosition + new Vector3(0, -0.1f, 0);
+        }
+        else
+        {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, _initialPosition, Time.deltaTime * 8f);
         }
     }
 
-    private void Pressed()
+    public void OnButtonPressed()
     {
+        Debug.Log("Button Pressed!");
         _isPressed = true;
-        OnPressed.Invoke();
-        Debug.Log("Pressed");
+
+        Debug.Log(gameObject.name);
+        PlayQuiz playQuiz = FindObjectOfType<PlayQuiz>();
+
+        if (gameObject.name == "BlueButton")
+        {
+            Debug.Log("Blue Button Pressed!");
+            chosenAnswer = "Answer 1";
+            playQuiz.Answer = chosenAnswer;
+            OnButtonReleased();
+        }
+        else if (gameObject.name == "GreenButton")
+        {
+            Debug.Log("Green Button Pressed!");
+            chosenAnswer = "Answer 2";
+            playQuiz.Answer = chosenAnswer;
+            OnButtonReleased();
+        }
+        else if (gameObject.name == "RedButton")
+        {
+            Debug.Log("Red Button Pressed!");
+            chosenAnswer = "Answer 3";
+            playQuiz.Answer = chosenAnswer;
+        }
+        else if (gameObject.name == "YellowButton")
+        {
+            Debug.Log("Yellow Button Pressed!");
+            chosenAnswer = "Answer 4";
+            playQuiz.Answer = chosenAnswer;
+        }
     }
 
-    private void Released()
+    public void OnButtonReleased()
     {
+        Debug.Log("Button Released!");
         _isPressed = false;
-        OnReleased.Invoke();
-        Debug.Log("Released");
     }
 }
