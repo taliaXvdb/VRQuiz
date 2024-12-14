@@ -10,42 +10,21 @@ public class PlayQuiz : MonoBehaviour
     public int _answerTime;
     public string _difficulty;
     public bool _narrator;
-    private GameObject hoveredButton;
     private List<Question> _questions;
-    public ButtonHandler buttonHandler;
-    [SerializeField] private InputActionAsset inputActions; // Assign your input actions
-    private InputAction buttonAction; // Tracks the trigger action
-    [SerializeField] private Transform controller; // Assign your VR controller
+    [SerializeField] private List<GameObject> _answerButtons;
 
     void Start()
     {
+        foreach (var button in _answerButtons)
+        {
+            button.SetActive(true);
+        }
         PlayQuizWithSettings();
-        var actionMap = inputActions.FindActionMap("Controller");
-        buttonAction = actionMap.FindAction("Primary Button");
-        buttonAction.Enable();
     }
 
     void Update()
     {
-        Ray ray = new Ray(controller.position, controller.forward);
-        RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 10f))
-        {
-            GameObject hoveredButton = hit.collider.gameObject;
-            if (hoveredButton.CompareTag("Button"))
-            {
-                Debug.Log("Button tag detected!");
-                if (buttonAction.triggered)
-                {
-                    buttonHandler.OnButtonClicked(hoveredButton);
-                }
-            }
-            else
-            {
-                Debug.Log("No button detected.");
-            }
-        }
     }
 
     public void PlayQuizWithSettings()
