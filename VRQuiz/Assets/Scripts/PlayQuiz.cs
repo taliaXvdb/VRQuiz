@@ -18,7 +18,8 @@ public class PlayQuiz : MonoBehaviour
     private SetupQuiz _setupQuiz;
     private int _currentQuestionIndex = 1;
     private bool _isQuizStarted = false;
-    public string Answer = "";
+    public int Score = 0;
+    public int Answer = 0;
     [SerializeField] private Canvas _instructionsCanvas;
     [SerializeField] private Canvas _quizCanvas;
 
@@ -92,52 +93,52 @@ public class PlayQuiz : MonoBehaviour
                 // Easy Questions
                 new Question(
                     "Who is the main character in the Harry Potter series, who goes to a magical school?",
-                    new List<string> { "Harry Potter", "Hermione Granger", "Ron Weasley", "Draco Malfoy" },
+                    new List<string> { "Ron Weasley", "Draco Malfoy", "Hermione Granger", "Harry Potter" },
                     "Harry Potter"
                 ),
                 new Question(
                     "What book series features Katniss Everdeen fighting in a deadly competition?",
-                    new List<string> { "The Hunger Games", "Divergent", "The Maze Runner", "Twilight" },
+                    new List<string> { "Twilight", "The Hunger Games", "The Maze Runner", "Divergent" },
                     "The Hunger Games"
                 ),
                 new Question(
                     "Who wrote the Diary of a Wimpy Kid series?",
-                    new List<string> { "Jeff Kinney", "Rick Riordan", "Dav Pilkey", "Roald Dahl" },
+                    new List<string> { "Dav Pilkey", "Rick Riordan", "Roald Dahl", "Jeff Kinney" },
                     "Jeff Kinney"
                 ),
                 new Question(
                     "In Percy Jackson and the Olympians, what Greek god is Percy’s father?",
-                    new List<string> { "Poseidon", "Zeus", "Hades", "Apollo" },
+                    new List<string> { "Zeus", "Poseidon", "Apollo", "Hades" },
                     "Poseidon"
                 ),
                 new Question(
                     "What color is the dress on the cover of the book The Selection?",
-                    new List<string> { "Blue", "Red", "Green", "Purple" },
+                    new List<string> { "Red", "Purple", "Green", "Blue" },
                     "Blue"
                 ),
                 new Question(
                     "Who wrote The Fault in Our Stars, a book about two teens dealing with cancer?",
-                    new List<string> { "John Green", "Sarah Dessen", "Nicholas Sparks", "Rainbow Rowell" },
+                    new List<string> { "Rainbow Rowell", "Nicholas Sparks", "John Green", "Sarah Dessen" },
                     "John Green"
                 ),
                 new Question(
                     "What’s the title of the book where a spider writes words in her web to save a pig?",
-                    new List<string> { "Charlotte's Web", "Babe", "Animal Farm", "Stuart Little" },
+                    new List<string> { "Stuart Little", "Charlotte's Web", "Babe", "Animal Farm" },
                     "Charlotte's Web"
                 ),
                 new Question(
                     "What book series has the tagline, “One ring to rule them all”?",
-                    new List<string> { "The Lord of the Rings", "Harry Potter", "Percy Jackson", "The Chronicles of Narnia" },
+                    new List<string> { "Percy Jackson", "The Lord of the Rings", "Harry Potter", "The Chronicles of Narnia" },
                     "The Lord of the Rings"
                 ),
                 new Question(
                     "In Twilight, what is the name of Bella’s vampire boyfriend?",
-                    new List<string> { "Edward Cullen", "Jacob Black", "Emmett Cullen", "Jasper Hale" },
+                    new List<string> { "Edward Cullen", "Jacob Black", "Jasper Hale", "Emmett Cullen" },
                     "Edward Cullen"
                 ),
                 new Question(
                     "What is the first book in the Divergent series?",
-                    new List<string> { "Divergent", "Insurgent", "Allegiant", "The Hunger Games" },
+                    new List<string> { "Allegiant", "Insurgent", "The Hunger Games", "Divergent" },
                     "Divergent"
                 ),
             };
@@ -149,12 +150,12 @@ public class PlayQuiz : MonoBehaviour
             {
                 new Question(
                     "Who is the author of Looking for Alaska?",
-                    new List<string> { "John Green", "J.K. Rowling", "Suzanne Collins", "Stephen King" },
+                    new List<string> { "Suzanne Collins", "Stephen King", "John Green", "J.K. Rowling" },
                     "John Green"
                 ),
                 new Question(
                     "In the Harry Potter series, what house is Draco Malfoy in?",
-                    new List<string> { "Slytherin", "Gryffindor", "Hufflepuff", "Ravenclaw" },
+                    new List<string> { "Gryffindor", "Ravenclaw", "Slytherin", "Hufflepuff" },
                     "Slytherin"
                 ),
                 new Question(
@@ -164,37 +165,37 @@ public class PlayQuiz : MonoBehaviour
                 ),
                 new Question(
                     "Who wrote the novel Eleanor & Park, about two misfit teens falling in love?",
-                    new List<string> { "Rainbow Rowell", "John Green", "Nicholas Sparks", "Cassandra Clare" },
+                    new List<string> { "Cassandra Clare", "Rainbow Rowell", "John Green", "Nicholas Sparks" },
                     "Rainbow Rowell"
                 ),
                 new Question(
                     "In the Hunger Games, what is the name of Katniss’s home district?",
-                    new List<string> { "District 12", "District 1", "District 5", "District 13" },
+                    new List<string> { "District 13", "District 5", "District 12", "District 1" },
                     "District 12"
                 ),
                 new Question(
                     "What book follows Starr Carter as she deals with police violence and activism?",
-                    new List<string> { "The Hate U Give", "Dear Martin", "All American Boys", "Angie Thomas" },
+                    new List<string> { "All American Boys", "Dear Martin", "The Hate U Give", "Angie Thomas" },
                     "The Hate U Give"
                 ),
                 new Question(
                     "In Divergent, what faction values intelligence above all?",
-                    new List<string> { "Erudite", "Amity", "Candor", "Dauntless" },
+                    new List<string> { "Amity", "Candor", "Erudite", "Dauntless" },
                     "Erudite"
                 ),
                 new Question(
                     "Who wrote the novel Wonder, about a boy with a facial difference?",
-                    new List<string> { "R.J. Palacio", "John Green", "Sarah Weeks", "Jodi Picoult" },
+                    new List<string> { "Sarah Weeks", "R.J. Palacio", "John Green", "Jodi Picoult" },
                     "R.J. Palacio"
                 ),
                 new Question(
                     "What is the title of the first book in A Series of Unfortunate Events?",
-                    new List<string> { "The Bad Beginning", "The Reptile Room", "The Austere Academy", "The Wide Window" },
+                    new List<string> { "The Austere Academy", "The Reptile Room", "The Wide Window", "The Bad Beginning" },
                     "The Bad Beginning"
                 ),
                 new Question(
                     "What’s the name of the magical wardrobe world in C.S. Lewis’s book?",
-                    new List<string> { "Narnia", "Hogwarts", "Neverland", "Middle-earth" },
+                    new List<string> { "Neverland", "Narnia", "Hogwarts", "Middle-earth" },
                     "Narnia"
                 ),
             };
@@ -206,52 +207,52 @@ public class PlayQuiz : MonoBehaviour
             {
                 new Question(
                     "Who is the author of They Both Die at the End, a book about two teens who meet on their last day alive?",
-                    new List<string> { "Adam Silvera", "John Green", "Nicola Yoon", "Becky Albertalli" },
+                    new List<string> { "John Green", "Nicola Yoon", "Adam Silvera", "Becky Albertalli" },
                     "Adam Silvera"
                 ),
                 new Question(
                     "In Shadow and Bone, what is the name of the dark magical force Alina Starkov faces?",
-                    new List<string> { "The Fold", "The Darkness", "The Shadow Realm", "The Rift" },
+                    new List<string> { "The Rift", "The Darkness", "The Fold", "The Shadow Realm" },
                     "The Fold"
                 ),
                 new Question(
                     "What is the real identity of the anonymous blogger in Gossip Girl (book series)?",
-                    new List<string> { "Dan Humphrey", "Blair Waldorf", "Serena van der Woodsen", "Chuck Bass" },
+                    new List<string> { "Blair Waldorf", "Chuck Bass", "Dan Humphrey", "Serena van der Woodsen" },
                     "Dan Humphrey"
                 ),
                 new Question(
                     "In Six of Crows, what is Kaz Brekker’s nickname?",
-                    new List<string> { "Dirtyhands", "The Bastard of the Barrel", "The Thief King", "The Shadow" },
+                    new List<string> { "The Thief King", "The Bastard of the Barrel", "Dirtyhands", "The Shadow" },
                     "Dirtyhands"
                 ),
                 new Question(
                     "Who wrote One of Us Is Lying, a mystery about four teens under suspicion of murder?",
-                    new List<string> { "Karen M. McManus", "Sarah Dessen", "Holly Jackson", "R.L. Stine" },
+                    new List<string> { "R.L. Stine", "Holly Jackson", "Karen M. McManus", "Sarah Dessen" },
                     "Karen M. McManus"
                 ),
                 new Question(
                     "What is the name of the boarding school in Crescent City: House of Earth and Blood by Sarah J. Maas?",
-                    new List<string> { "Bryce Quinlan doesn’t attend a school", "Velaris Academy", "The House of Fae", "Mistwood" },
+                    new List<string> { "Mistwood", "Bryce Quinlan doesn’t attend a school", "The House of Fae", "Velaris Academy" },
                     "Bryce Quinlan doesn’t attend a school"
                 ),
                 new Question(
                     "In The Cruel Prince, who is Jude’s primary rival in the faerie court?",
-                    new List<string> { "Cardan", "Taryn", "Madoc", "Nicasia" },
+                    new List<string> { "Madoc", "Taryn", "Cardan", "Nicasia" },
                     "Cardan"
                 ),
                 new Question(
                     "What is the name of the group of teen vigilantes in Renegades by Marissa Meyer?",
-                    new List<string> { "The Renegades", "The Anarchists", "The Watchers", "The Enforcers" },
+                    new List<string> { "The Watchers", "The Renegades", "The Enforcers", "The Anarchists" },
                     "The Renegades"
                 ),
                 new Question(
                     "In Red Queen, what power does Mare Barrow discover she has?",
-                    new List<string> { "Controlling electricity", "Reading minds", "Healing powers", "Shapeshifting" },
+                    new List<string> { "Shapeshifting", "Healing powers", "Controlling electricity", "Reading minds" },
                     "Controlling electricity"
                 ),
                 new Question(
                     "Who wrote We Were Liars, a book about a privileged but broken family on a private island?",
-                    new List<string> { "E. Lockhart", "Sarah Dessen", "John Green", "Jennifer Niven" },
+                    new List<string> { "Sarah Dessen", "E. Lockhart", "John Green", "Jennifer Niven" },
                     "E. Lockhart"
                 ),
             };
@@ -306,9 +307,25 @@ public class PlayQuiz : MonoBehaviour
         {
             ShowQuestion(question);
             yield return new WaitForSeconds(_answerTime);
+            CheckAnswer(question);
         }
 
         Debug.Log("Quiz completed!");
+        Debug.Log($"Your score: {Score}/{_questions.Count}");
+    }
+
+    private void CheckAnswer(Question question)
+    {
+        if (question.CorrectAnswer == question.Answers[Answer - 1])
+        {
+            Debug.Log("Correct answer!");
+            Score++;
+        }
+        else if (question.CorrectAnswer != question.Answers[Answer - 1] || Answer != 0)
+        {
+            Debug.Log("Incorrect answer.");
+            Debug.Log($"Correct answer: {question.CorrectAnswer}");
+        }
     }
 }
 
