@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         _instructionsCanvas.gameObject.SetActive(false);
+
         _isInstructionsShown = false;
     }
 }

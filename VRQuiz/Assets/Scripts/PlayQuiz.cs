@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayQuiz : MonoBehaviour
 {
@@ -10,29 +13,52 @@ public class PlayQuiz : MonoBehaviour
     public int _answerTime;
     public string _difficulty;
     public bool _narrator;
+    private bool _isInstructionsShown = true;
     private List<Question> _questions;
     private SetupQuiz _setupQuiz;
+    private int _currentQuestionIndex = 1;
+    private bool _isQuizStarted = false;
     public string Answer = "";
-    [SerializeField] private List<GameObject> _answerButtons;
+    [SerializeField] private Canvas _instructionsCanvas;
+    [SerializeField] private Canvas _quizCanvas;
+
+    TMP_Text questionTitle;
+    TMP_Text questionText;
+    TMP_Text answer1;
+    TMP_Text answer2;
+    TMP_Text answer3;
+    TMP_Text answer4;
 
     void Start()
     {
         _setupQuiz = FindObjectOfType<SetupQuiz>();
         _setupQuiz.enabled = false;
+        _currentQuestionIndex = 1; // Reset to the first question
 
-        foreach (var button in _answerButtons)
-        {
-            button.SetActive(true);
-        }
-        PlayQuizWithSettings();
+        questionTitle = _quizCanvas.transform.Find("QuestionTitle").GetComponent<TMP_Text>();
+        questionText = _quizCanvas.transform.Find("QuestionText").GetComponent<TMP_Text>();
+        answer1 = _quizCanvas.transform.Find("Answer1").GetComponentInChildren<TMP_Text>();
+        answer2 = _quizCanvas.transform.Find("Answer2").GetComponentInChildren<TMP_Text>();
+        answer3 = _quizCanvas.transform.Find("Answer3").GetComponentInChildren<TMP_Text>();
+        answer4 = _quizCanvas.transform.Find("Answer4").GetComponentInChildren<TMP_Text>();
+
+        ShowInstructions();
+        PrepareQuestions();
+
     }
 
     void Update()
     {
+        if (!_isInstructionsShown && _isQuizStarted)
+        {
+            _quizCanvas.gameObject.SetActive(true);
+            _isQuizStarted = false;
 
+            StartQuiz();
+        }
     }
 
-    public void PlayQuizWithSettings()
+    public void PrepareQuestions()
     {
         Debug.Log($"Playing quiz with settings: Answer Time: {_answerTime}, Difficulty: {_difficulty}, Category: {_category}, Narrator: {_narrator}");
         if (_difficulty == "Easy")
@@ -58,6 +84,7 @@ public class PlayQuiz : MonoBehaviour
 
     void MakeQuestionList(string diff)
     {
+        Debug.Log("Making question list...");
         if (diff == "Easy")
         {
             List<Question> questions = new List<Question>
@@ -114,6 +141,7 @@ public class PlayQuiz : MonoBehaviour
                     "Divergent"
                 ),
             };
+            _questions = questions;
         }
         else if (diff == "Normal")
         {
@@ -170,6 +198,7 @@ public class PlayQuiz : MonoBehaviour
                     "Narnia"
                 ),
             };
+            _questions = questions;
         }
         else if (diff == "Hard")
         {
@@ -226,12 +255,60 @@ public class PlayQuiz : MonoBehaviour
                     "E. Lockhart"
                 ),
             };
+            _questions = questions;
         }
     }
 
     public void StartQuiz()
     {
         Debug.Log("Starting quiz...");
+        StartCoroutine(DisplayQuestions());
+    }
+
+    public void ShowInstructions()
+    {
+        _instructionsCanvas.gameObject.SetActive(true);
+        StartCoroutine(HideInstructions());
+    }
+
+    // Hide the instructions canvas after 10 seconds
+    private IEnumerator HideInstructions()
+    {
+        yield return new WaitForSeconds(5);
+        _instructionsCanvas.gameObject.SetActive(false);
+
+        _isQuizStarted = true;
+        _isInstructionsShown = false;
+    }
+
+    private void ShowQuestion(Question question)
+    {
+        questionTitle.text = string.Empty;
+        questionText.text = string.Empty;
+        answer1.text = string.Empty;
+        answer2.text = string.Empty;
+        answer3.text = string.Empty;
+        answer4.text = string.Empty;
+
+        Debug.Log(question.Text);
+        questionTitle.text = "Question " + _currentQuestionIndex;
+        questionText.text = question.Text;
+        answer1.text = question.Answers[0];
+        answer2.text = question.Answers[1];
+        answer3.text = question.Answers[2];
+        answer4.text = question.Answers[3];
+        _currentQuestionIndex++;
+    }
+
+    private IEnumerator DisplayQuestions()
+    {
+        foreach (Question question in _questions)
+        {
+            ShowQuestion(question);
+            yield return new WaitForSeconds(_answerTime);
+        }
+
+        Debug.Log("Quiz completed!");
     }
 }
 

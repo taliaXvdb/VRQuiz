@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SetupQuiz : MonoBehaviour
 {
-    public int answerTime = 20;
+    public int answerTime = 10;
     public string difficulty = "Easy";
     public string category = "";
     public bool narrator = false;
