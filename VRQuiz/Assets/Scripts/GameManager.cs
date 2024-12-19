@@ -11,6 +11,11 @@ public class GameManager : MonoBehaviour
     public bool QuizStarted = false;
     void Start()
     {
+        AudioManager audioManager = GameObject.FindObjectOfType<AudioManager>();
+        if (audioManager != null)
+        {
+            audioManager.PlayStopSound();
+        }
         ShowInstructions();
     }
 

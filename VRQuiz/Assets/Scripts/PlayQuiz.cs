@@ -22,6 +22,9 @@ public class PlayQuiz : MonoBehaviour
     public int Answer = 0;
     [SerializeField] private Canvas _instructionsCanvas;
     [SerializeField] private Canvas _quizCanvas;
+    [SerializeField] private AudioSource _audioSourceWrong;
+    [SerializeField] private AudioSource _audioSourceCorrect;
+    [SerializeField] private AudioSource _audioSourceCountdown;
 
     TMP_Text questionTitle;
     TMP_Text questionText;
@@ -43,6 +46,13 @@ public class PlayQuiz : MonoBehaviour
         answer3 = _quizCanvas.transform.Find("Answer3").GetComponentInChildren<TMP_Text>();
         answer4 = _quizCanvas.transform.Find("Answer4").GetComponentInChildren<TMP_Text>();
 
+        AudioManager audioManager = GameObject.FindObjectOfType<AudioManager>();
+        if (audioManager != null)
+        {
+            audioManager.PlayPlaySound();
+        }
+
+        _audioSourceCountdown.Play();
         ShowInstructions();
         PrepareQuestions();
 
@@ -275,7 +285,7 @@ public class PlayQuiz : MonoBehaviour
     // Hide the instructions canvas after 10 seconds
     private IEnumerator HideInstructions()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         _instructionsCanvas.gameObject.SetActive(false);
 
         _isQuizStarted = true;
@@ -312,6 +322,8 @@ public class PlayQuiz : MonoBehaviour
 
         Debug.Log("Quiz completed!");
         Debug.Log($"Your score: {Score}/{_questions.Count}");
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        gameManager.QuizStarted = false;
     }
 
     private void CheckAnswer(Question question)
@@ -319,11 +331,13 @@ public class PlayQuiz : MonoBehaviour
         if (question.CorrectAnswer == question.Answers[Answer - 1])
         {
             Debug.Log("Correct answer!");
+            _audioSourceCorrect.Play();
             Score++;
         }
         else if (question.CorrectAnswer != question.Answers[Answer - 1] || Answer != 0)
         {
             Debug.Log("Incorrect answer.");
+            _audioSourceWrong.Play();
             Debug.Log($"Correct answer: {question.CorrectAnswer}");
         }
     }
