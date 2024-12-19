@@ -22,6 +22,7 @@ public class PlayQuiz : MonoBehaviour
     public int Answer = 0;
     [SerializeField] private Canvas _instructionsCanvas;
     [SerializeField] private Canvas _quizCanvas;
+    [SerializeField] private Canvas _scoreCanvas;
     [SerializeField] private AudioSource _audioSourceWrong;
     [SerializeField] private AudioSource _audioSourceCorrect;
     [SerializeField] private AudioSource _audioSourceCountdown;
@@ -32,6 +33,8 @@ public class PlayQuiz : MonoBehaviour
     TMP_Text answer2;
     TMP_Text answer3;
     TMP_Text answer4;
+    TMP_Text scoreTitle;
+    TMP_Text score;
 
     void Start()
     {
@@ -45,6 +48,9 @@ public class PlayQuiz : MonoBehaviour
         answer2 = _quizCanvas.transform.Find("Answer2").GetComponentInChildren<TMP_Text>();
         answer3 = _quizCanvas.transform.Find("Answer3").GetComponentInChildren<TMP_Text>();
         answer4 = _quizCanvas.transform.Find("Answer4").GetComponentInChildren<TMP_Text>();
+
+        scoreTitle = _scoreCanvas.transform.Find("ScoreTitle").GetComponent<TMP_Text>();
+        score = _scoreCanvas.transform.Find("Score").GetComponent<TMP_Text>();
 
         AudioManager audioManager = GameObject.FindObjectOfType<AudioManager>();
         if (audioManager != null)
@@ -322,6 +328,28 @@ public class PlayQuiz : MonoBehaviour
 
         Debug.Log("Quiz completed!");
         Debug.Log($"Your score: {Score}/{_questions.Count}");
+        _quizCanvas.gameObject.SetActive(false);
+        _scoreCanvas.gameObject.SetActive(true);
+        if (Score == 10)
+        {
+            scoreTitle.text = "Perfect!";
+            score.text = Score + "/" + _questions.Count;
+        }
+        else if (Score >= 7)
+        {
+            scoreTitle.text = "Well done!";
+            score.text = Score + "/" + _questions.Count;
+        }
+        else if (Score >= 4)
+        {
+            scoreTitle.text = "Good effort!";
+            score.text = Score + "/" + _questions.Count;
+        }
+        else
+        {
+            scoreTitle.text = "Better luck next time!";
+            score.text = Score + "/" + _questions.Count;
+        }
         GameManager gameManager = FindObjectOfType<GameManager>();
         gameManager.QuizStarted = false;
     }
