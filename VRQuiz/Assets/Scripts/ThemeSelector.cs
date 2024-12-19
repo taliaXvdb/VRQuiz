@@ -90,6 +90,7 @@ public class ThemeSelector : MonoBehaviour
 
     void ShowSettings(string categoryName)
     {
+        HideHoverCanvas();
         // Find the child GameObject in the settings canvas by name
         GameObject category = settingsCanvas.transform.Find(categoryName)?.gameObject;
         settingUpQuiz = true;
@@ -131,7 +132,7 @@ public class ThemeSelector : MonoBehaviour
         }
     }
 
-    void HideSettings()
+    public void HideSettings()
     {
         foreach (Transform child in settingsCanvas.transform)
         {

@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
             bool narrator = setupQuiz.narrator;
 
             _themeSelector = FindObjectOfType<ThemeSelector>();
+            _themeSelector.HideSettings();
             _themeSelector.enabled = false;
             PlayQuiz playQuiz = FindObjectOfType<PlayQuiz>();
             playQuiz.enabled = true;

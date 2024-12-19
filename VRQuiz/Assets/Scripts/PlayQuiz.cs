@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayQuiz : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class PlayQuiz : MonoBehaviour
     [SerializeField] private Canvas _instructionsCanvas;
     [SerializeField] private Canvas _quizCanvas;
     [SerializeField] private Canvas _scoreCanvas;
+    [SerializeField] private Canvas _nextCanvas;
     [SerializeField] private AudioSource _audioSourceWrong;
     [SerializeField] private AudioSource _audioSourceCorrect;
     [SerializeField] private AudioSource _audioSourceCountdown;
@@ -350,24 +352,54 @@ public class PlayQuiz : MonoBehaviour
             scoreTitle.text = "Better luck next time!";
             score.text = Score + "/" + _questions.Count;
         }
-        GameManager gameManager = FindObjectOfType<GameManager>();
-        gameManager.QuizStarted = false;
     }
 
     private void CheckAnswer(Question question)
     {
-        if (question.CorrectAnswer == question.Answers[Answer - 1])
-        {
-            Debug.Log("Correct answer!");
-            _audioSourceCorrect.Play();
-            Score++;
-        }
-        else if (question.CorrectAnswer != question.Answers[Answer - 1] || Answer != 0)
+        if (Answer == 0)
         {
             Debug.Log("Incorrect answer.");
             _audioSourceWrong.Play();
             Debug.Log($"Correct answer: {question.CorrectAnswer}");
         }
+        else if (question.CorrectAnswer == question.Answers[Answer - 1])
+        {
+            Debug.Log("Correct answer!");
+            _audioSourceCorrect.Play();
+            Score++;
+        }
+        else if (question.CorrectAnswer != question.Answers[Answer - 1])
+        {
+            Debug.Log("Incorrect answer.");
+            _audioSourceWrong.Play();
+            Debug.Log($"Correct answer: {question.CorrectAnswer}");
+        }
+    }
+
+    public void ShowNextOptions()
+    {
+        Debug.Log("Showing next options...");
+        _scoreCanvas.gameObject.SetActive(false);
+        _nextCanvas.gameObject.SetActive(true);
+    }
+
+    public void PlayAgain()
+    {
+        _nextCanvas.gameObject.SetActive(false);
+        _isInstructionsShown = true;
+        _currentQuestionIndex = 1;
+        Score = 0;
+        Answer = 0;
+        Start();
+    }
+
+    public void NewQuiz()
+    {
+        _nextCanvas.gameObject.SetActive(false);
+        _currentQuestionIndex = 1;
+        Score = 0;
+        Answer = 0;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
 
