@@ -27,6 +27,8 @@ public class PlayQuiz : MonoBehaviour
     [SerializeField] private Canvas _nextCanvas;
     [SerializeField] private AudioSource _audioSourceWrong;
     [SerializeField] private AudioSource _audioSourceCorrect;
+    [SerializeField] private AudioSource _audioSourceSadTrumpet;
+    [SerializeField] private AudioSource _audioSourceApplause;
     [SerializeField] private AudioSource _audioSourceCountdown;
 
     TMP_Text questionTitle;
@@ -337,21 +339,25 @@ public class PlayQuiz : MonoBehaviour
         {
             scoreTitle.text = "Perfect!";
             score.text = Score + "/" + _questions.Count;
+            _audioSourceApplause.Play();
         }
         else if (Score >= 7)
         {
             scoreTitle.text = "Well done!";
             score.text = Score + "/" + _questions.Count;
+            _audioSourceApplause.Play();
         }
-        else if (Score >= 4)
+        else if (Score >= 5)
         {
             scoreTitle.text = "Good effort!";
             score.text = Score + "/" + _questions.Count;
+            _audioSourceApplause.Play();
         }
         else
         {
             scoreTitle.text = "Better luck next time!";
             score.text = Score + "/" + _questions.Count;
+            _audioSourceSadTrumpet.Play();
         }
     }
 
