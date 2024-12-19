@@ -7,13 +7,11 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Canvas _instructionsCanvas;
     [SerializeField] private Transform _player;
-    public Vector3 _initialPosition;
     private ThemeSelector _themeSelector;
     private bool _isInstructionsShown = true;
     public bool QuizStarted = false;
     void Start()
     {
-        _initialPosition = _player.position;
         AudioManager audioManager = GameObject.FindObjectOfType<AudioManager>();
         if (audioManager != null)
         {
