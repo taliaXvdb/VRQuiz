@@ -36,7 +36,9 @@ public class SetupQuiz : MonoBehaviour
     {
         GameManager gameManager = FindObjectOfType<GameManager>();
         gameManager.QuizStarted = true;
+        player.position = gameManager._initialPosition;
         player.position = teleportDestination.position;
+        player.rotation = teleportDestination.rotation;
         Debug.Log($"Starting quiz with {answerTime} seconds, {difficulty} difficulty, and {(narrator ? "narrator" : "no narrator")}.");
     }
 
