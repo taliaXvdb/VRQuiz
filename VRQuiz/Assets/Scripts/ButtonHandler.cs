@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ButtonHandler : MonoBehaviour
 {
-
-    private bool _isPressed = false;
     private Vector3 _initialPosition;
     private ConfigurableJoint _joint;
 
@@ -17,14 +15,8 @@ public class ButtonHandler : MonoBehaviour
         _initialPosition = transform.localPosition;
     }
 
-    void Update()
-    {
-
-    }
-
     public void OnButtonPressed()
     {
-        _isPressed = true;
         PlayQuiz playQuiz = FindObjectOfType<PlayQuiz>();
 
         if (gameObject.name == "BlueButton")

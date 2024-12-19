@@ -330,6 +330,7 @@ public class PlayQuiz : MonoBehaviour
 
         Debug.Log("Quiz completed!");
         Debug.Log($"Your score: {Score}/{_questions.Count}");
+
         _quizCanvas.gameObject.SetActive(false);
         _scoreCanvas.gameObject.SetActive(true);
         if (Score == 10)
