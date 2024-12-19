@@ -1876,6 +1876,7 @@ public class PlayQuiz : MonoBehaviour
             ShowQuestion(question);
             yield return new WaitForSeconds(_answerTime);
             CheckAnswer(question);
+            Answer = 0;
         }
 
         Debug.Log("Quiz completed!");
